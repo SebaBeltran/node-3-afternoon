@@ -4,7 +4,8 @@ let id = 1;
 
 module.exports = {
   login:(req, res, next)=>{
-    let user = users.find(obj => obj.username === req.session.user.username && obj.password === req.session.user.password);
+    console.log("hit")
+    const user = users.find(obj => obj.username === req.body.username && obj.password === req.body.password);
     user !== undefined
       ?(
       req.session.user.username = user.username,
